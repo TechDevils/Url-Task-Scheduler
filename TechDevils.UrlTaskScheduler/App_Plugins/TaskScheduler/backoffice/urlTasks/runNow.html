@@ -1,0 +1,28 @@
+﻿<div class="umb-pane" ng-controller="TechDevils.RunNowUrlSchedulerController">
+
+    <div ng-if="completeModel.ran != null">
+        <p> Ran @ <b>{{completeModel.ran}}</b></p>
+       
+        <div>
+            <div class="umb-pane btn-toolbar umb-btn-toolbar">
+                <div class="control-group umb-control-group">
+                    <a href="" class="btn btn-primary" ng-click="closeRunMenu()"><localize key="general_ok">OK</localize></a>/a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="completeModel.ran == null">
+        <p>
+            Are you sure you want to run "{{currentNode.name}}" now ?
+        </p>
+
+        <div>
+            <div class="umb-pane btn-toolbar umb-btn-toolbar">
+                <div class="control-group umb-control-group">
+                    <a href="" class="btn btn-link" ng-click="closeRunMenu()"><localize key="general_cancel">Cancel</localize></a>
+                    <a href="" class="btn btn-primary" ng-click="runNow(currentNode.id)"><localize key="general_ok">OK</localize></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

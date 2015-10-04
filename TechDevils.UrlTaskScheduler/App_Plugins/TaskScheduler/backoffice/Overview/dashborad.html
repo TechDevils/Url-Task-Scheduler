@@ -1,0 +1,54 @@
+﻿<style>
+    .td-button
+    {
+        border: none;
+        background-color: #ffffff;
+        margin: 3px;
+    }
+
+    table tr
+    {
+        border-bottom:1px solid #808080 ;
+    }
+
+    table td
+    {
+        padding: 5px;
+    }
+</style>
+
+
+<div ng-controller="TechDevils.DashboradController">
+    <h1>Urls timing overview</h1>   
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Url</th>
+            <th>Https</th>
+            <th>Desc</th>
+            <th>Feq</th>
+            <th>Last run</th>
+            <th>Next run</th>
+            <th>Status</th>
+            <th>disabled</th>
+            <th>Last five outcomes</th>
+            <th>Run now</th>
+            <th>Last Manual run</th>
+        </thead>
+        
+        <tr ng-repeat ="url in urls">
+            <td>{{url.id}}</td>
+            <td>{{url.url}}</td>
+            <td>{{url.isHttps}}</td>
+            <td>{{url.desc}}</td>
+            <td>{{url.feq}}</td>
+            <td>{{url.lastRun}}</td>
+            <td>{{url.nextRun}}</td>
+            <td>{{url.currentTaskStatus}}</td>
+            <td><button ng-click="changeStatus(url.id)" class="td-button"><i class="icon-globe-alt large color-{{url.disabledIcon}}" style="font-size: 32px"></i></button></td>
+            <td>{{url.lastFiveOutcomes}}</td>
+            <td><button ng-click="runNowNow(url.id)" class="td-button"><i class="icon-departure large color-yellow"></i></button></td>
+            <td>{{url.lastManualRun}}</td>
+        </tr>        
+    </table>
+</div>

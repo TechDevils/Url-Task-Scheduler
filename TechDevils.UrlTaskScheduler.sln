@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDevils.UrlTaskScheduler", "TechDevils.UrlTaskScheduler\TechDevils.UrlTaskScheduler.csproj", "{B40FB0D1-53B3-403E-B48A-1FE730D0DF58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDevils.UrlTaskScheduler.Tests", "TechDevils.UrlTaskScheduler.Tests\TechDevils.UrlTaskScheduler.Tests.csproj", "{F45773CF-A340-43D4-A3F6-3CED0900E781}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B40FB0D1-53B3-403E-B48A-1FE730D0DF58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40FB0D1-53B3-403E-B48A-1FE730D0DF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40FB0D1-53B3-403E-B48A-1FE730D0DF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40FB0D1-53B3-403E-B48A-1FE730D0DF58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45773CF-A340-43D4-A3F6-3CED0900E781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45773CF-A340-43D4-A3F6-3CED0900E781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45773CF-A340-43D4-A3F6-3CED0900E781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45773CF-A340-43D4-A3F6-3CED0900E781}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

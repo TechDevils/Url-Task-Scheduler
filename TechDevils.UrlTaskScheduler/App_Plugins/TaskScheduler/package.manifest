@@ -1,0 +1,9 @@
+﻿{
+javascript: [
+'~/App_Plugins/TaskScheduler/backoffice/urlTasks/edit.controller.js',
+'~/App_Plugins/TaskScheduler/backoffice/urlTasks/delete.controller.js',
+'~/App_Plugins/TaskScheduler/backoffice/urlTasks/runNow.controller.js',
+'~/App_Plugins/TaskScheduler/backoffice/Overview/dashboard.controller.js',
+'~/App_Plugins/TaskScheduler/urltask.resource.js'
+]
+}

@@ -1,0 +1,93 @@
+﻿<form name="urlTask"
+      ng-controller="TechDevils.EditUrlSchedulerController"
+      ng-show="loaded"
+      ng-submit="save(url)" val-form-manager>
+    <umb-header>
+
+        <div class="span7">
+            <umb-content-name placeholder="@placeholders_entername"
+                              ng-model="url.desc" required />
+        </div>
+
+        <div class="span5">
+            <div class="btn-toolbar pull-right umb-btn-toolbar">
+                <umb-options-menu ng-show="currentNode"
+                                  current-node="currentNode"
+                                  current-section="{{currentSection}}">
+                </umb-options-menu>
+            </div>
+        </div>
+    </umb-header>
+    <div class="umb-panel-body umb-scrollable row-fluid">
+        <div class="tab-content form-horizontal" style="padding-bottom: 90px">
+            <div class="umb-pane">
+                <umb-control-group label="Url" description="The Url you wish to call. With out the http://">
+                    <input type="text" class="umb-editor umb-textstring" ng-model="url.url" required />
+                </umb-control-group>
+
+                <umb-control-group label="Is Https" description="Is the url your calling https">
+                    <input type="checkbox" class="" ng-model="url.isHttps" />
+                </umb-control-group>
+
+                <umb-control-group label="Select" description="how offten do you want the task to run" required>
+                    <select ng-model="url.runningType">
+                        <option value="dayAndTime">Day and Time</option>
+                        <option value="interval">Interval</option>
+                    </select>
+                </umb-control-group>
+
+                <umb-control-group ng-if="url.runningType == 'dayAndTime'" label="Days of the week" description="the days that you want the url to run">
+                    mon : <input type="checkbox" class="" ng-model="url.daysToRun.mon" ng-change="checkSetAllValue()" />
+                    tue : <input type="checkbox" class="" ng-model="url.daysToRun.tue" ng-change="checkSetAllValue()" />
+                    wed : <input type="checkbox" class="" ng-model="url.daysToRun.wed" ng-change="checkSetAllValue()" />
+                    thu : <input type="checkbox" class="" ng-model="url.daysToRun.thu" ng-change="checkSetAllValue()" />
+                    fri : <input type="checkbox" class="" ng-model="url.daysToRun.fri" ng-change="checkSetAllValue()" />
+                    sat : <input type="checkbox" class="" ng-model="url.daysToRun.sat" ng-change="checkSetAllValue()" />
+                    sun : <input type="checkbox" class="" ng-model="url.daysToRun.sun" ng-change="checkSetAllValue()" />
+                    all : <input type="checkbox" class="" ng-model="url.daysToRunAll" ng-change="setUrlsDays()" />
+                </umb-control-group>
+
+                <umb-control-group ng-if="url.runningType == 'dayAndTime'" label="Time" description="On the days what time you want the item to run">
+                    <input type="time" class="umb-editor umb-textstring" ng-model="url.timeToRun" />
+                </umb-control-group>
+
+                <umb-control-group ng-if="url.runningType == 'interval'" label="Fequancey (Min)" description="Minuet Intervals to run">
+                    <input type="number" class="umb-editor umb-textstring" ng-model="url.minuteInterval" />
+                </umb-control-group>
+                
+                <umb-control-group label="Last run" ng-if="creationId != -1">
+                    <h2>{{url.lastRunDate.toIsoDateTimeString()}}</h2>
+                </umb-control-group>
+
+                <umb-control-group label="Next run" ng-if="creationId != -1">
+                    <h2>{{url.nextRunDate.toIsoDateTimeString()}}</h2>
+                </umb-control-group>
+
+                <div class="umb-tab-buttons" detect-fold>
+                    <div class="btn-group">
+
+                        <a href="" class="btn btn-info" ng-click="enableUrl()" ng-if="creationId != -1 && url.disabled">
+                            Enable
+                        </a>
+                        <a href="" class="btn btn-danger" ng-click="disableUrl()" ng-if="creationId != -1 && !url.disabled">
+                            Disable
+                        </a>
+                        <a href="" data-hotkey="ctrl+r" class="btn btn-warning" ng-click="" ng-if="creationId != -1">
+                            Run now
+                        </a>
+                        <button type="submit" data-hotkey="ctrl+s" class="btn btn-success">
+                            <localize key="buttons_save">Save</localize>
+                        </button>
+
+                        <!--<input type="submit" name="Saver" value="savedit"/>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+
+

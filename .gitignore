@@ -100,3 +100,7 @@ www/App_Data/umbraco.config
 
 */umbraco/*
 */umbraco_Client/*
+*/App_Data/*
+*/App_Code/*
+*/Config/*
+*/Global.asax
