@@ -104,3 +104,7 @@ www/App_Data/umbraco.config
 */App_Code/*
 */Config/*
 */Global.asax
+*/css/*
+*/scripts/*
+*/Views/Partials/*
+*/media/created-packages/TechDevils.UrlTaskScheduler_1.0.0.zip
