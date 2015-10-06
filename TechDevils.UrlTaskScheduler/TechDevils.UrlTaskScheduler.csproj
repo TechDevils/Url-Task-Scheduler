@@ -230,7 +230,7 @@
     <Compile Include="TechDevilsTaskScheduler\Service\UrlRunningService.cs" />
     <Compile Include="TechDevilsTaskScheduler\Controllers\UrlTaskRunnerController.cs" />
     <Content Include="App_Plugins\TaskScheduler\backoffice\Overview\dashboard.controller.js" />
-    <Content Include="App_Plugins\TaskScheduler\backoffice\Overview\dashborad.html" />
+    <Content Include="App_Plugins\TaskScheduler\backoffice\Overview\dashboard.html" />
     <Content Include="App_Plugins\TaskScheduler\backoffice\urlTasks\dashboard.html" />
     <Content Include="App_Plugins\TaskScheduler\backoffice\urlTasks\delete.html" />
     <Content Include="App_Plugins\TaskScheduler\backoffice\urlTasks\edit.controller.js" />
