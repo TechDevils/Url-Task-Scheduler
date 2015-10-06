@@ -216,6 +216,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sections\ScheduleUrlArea.cs" />
     <Compile Include="TechDevilsTaskScheduler\AppStartUp\KeepAliveTaskJob.cs" />
     <Compile Include="TechDevilsTaskScheduler\AppStartUp\StartUpEvent.cs" />
     <Compile Include="TechDevilsTaskScheduler\AppStartUp\UrlTaskJob.cs" />
@@ -297,7 +298,6 @@
     <Compile Include="Events\RegisterEvent.cs" />
     <Compile Include="Models\ScheduleUrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sections\SchecduleUrlArea.cs" />
     <Compile Include="TechDevilsTaskScheduler\Section.cs" />
     <Compile Include="TechDevilsTaskScheduler\Controllers\UrlTaskController.cs" />
   </ItemGroup>
