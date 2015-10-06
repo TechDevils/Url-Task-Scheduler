@@ -21,22 +21,22 @@
     <div class="umb-panel-body umb-scrollable row-fluid">
         <div class="tab-content form-horizontal" style="padding-bottom: 90px">
             <div class="umb-pane">
-                <umb-control-group label="Url" description="The Url you wish to call. With out the http://">
+                <umb-control-group label="Url" description="The URL you wish to call, (without the http:// prefix).">
                     <input type="text" class="umb-editor umb-textstring" ng-model="url.url" required />
                 </umb-control-group>
 
-                <umb-control-group label="Is Https" description="Is the url your calling https">
+                <umb-control-group label="Is Https" description="Is the URL your calling HTTPS?">
                     <input type="checkbox" class="" ng-model="url.isHttps" />
                 </umb-control-group>
 
-                <umb-control-group label="Select" description="how offten do you want the task to run" required>
+                <umb-control-group label="Select" description="How often do you want the task to run?" required>
                     <select ng-model="url.runningType">
                         <option value="dayAndTime">Day and Time</option>
                         <option value="interval">Interval</option>
                     </select>
                 </umb-control-group>
 
-                <umb-control-group ng-if="url.runningType == 'dayAndTime'" label="Days of the week" description="the days that you want the url to run">
+                <umb-control-group ng-if="url.runningType == 'dayAndTime'" label="Days of the week" description="The days that you want the URL to run.">
                     mon : <input type="checkbox" class="" ng-model="url.daysToRun.mon" ng-change="checkSetAllValue()" />
                     tue : <input type="checkbox" class="" ng-model="url.daysToRun.tue" ng-change="checkSetAllValue()" />
                     wed : <input type="checkbox" class="" ng-model="url.daysToRun.wed" ng-change="checkSetAllValue()" />
@@ -51,7 +51,7 @@
                     <input type="time" class="umb-editor umb-textstring" ng-model="url.timeToRun" />
                 </umb-control-group>
 
-                <umb-control-group ng-if="url.runningType == 'interval'" label="Fequancey (Min)" description="Minuet Intervals to run">
+                <umb-control-group ng-if="url.runningType == 'interval'" label="Frequency (Min)" description="Minute intervals to run">
                     <input type="number" class="umb-editor umb-textstring" ng-model="url.minuteInterval" />
                 </umb-control-group>
                 
