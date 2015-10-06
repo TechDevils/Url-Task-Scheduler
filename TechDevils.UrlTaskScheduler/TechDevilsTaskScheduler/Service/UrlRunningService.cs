@@ -9,12 +9,12 @@ using System.Web;
 using log4net;
 using log4net.Util;
 using TechDevils.UrlTaskScheduler.Models;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Enums;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Enums;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service.Interfaces;
 using Umbraco.Core;
 using Umbraco.Core.Persistence;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
 {
     public class UrlRunningService : IUrlRunningService
     {

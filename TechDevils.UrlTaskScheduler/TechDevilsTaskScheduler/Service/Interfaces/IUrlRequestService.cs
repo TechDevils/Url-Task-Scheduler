@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service.Interfaces
 {
     public interface IUrlRequestService
     {

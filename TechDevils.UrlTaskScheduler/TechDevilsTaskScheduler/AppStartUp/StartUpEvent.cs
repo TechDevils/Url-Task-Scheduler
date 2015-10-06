@@ -12,7 +12,7 @@ using Umbraco.Core;
 using Umbraco.Core.Configuration;
 using Umbraco.Web;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.AppSartUp
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.AppStartUp
 {
     public class StartUpEvent : IApplicationEventHandler
     {

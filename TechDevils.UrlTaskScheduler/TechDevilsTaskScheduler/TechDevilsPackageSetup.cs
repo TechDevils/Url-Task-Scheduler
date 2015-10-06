@@ -17,7 +17,7 @@ using Umbraco.Core.Strings;
 using umbraco.interfaces;
 using Umbraco.Web.WebServices;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler
 {
     //<Action runat="install" alias="TechDevilsPackageSetup" source="~/app_data/temp/TechDevils.UrlTaskScheduler/TechDevils.UrlTaskScheduler.dll" target="~/bin/TechDevils.UrlTaskScheduler.dll" minversion="7" />
     public class TechDevilsPackageSetup : IPackageAction

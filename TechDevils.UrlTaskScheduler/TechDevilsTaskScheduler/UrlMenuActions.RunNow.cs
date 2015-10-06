@@ -5,7 +5,7 @@ using System.Web;
 using umbraco.BasePages;
 using umbraco.interfaces;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler
 {
 	public class UrlMenuActions : IAction
 	{

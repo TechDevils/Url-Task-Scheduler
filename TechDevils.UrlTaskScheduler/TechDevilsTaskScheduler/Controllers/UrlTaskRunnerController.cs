@@ -4,13 +4,12 @@ using System.Reflection;
 using System.Web.Mvc;
 using log4net;
 using TechDevils.UrlTaskScheduler.Models;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Enums;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service.Interfaces;
 using Umbraco.Core.Persistence;
 using Umbraco.Web.WebApi;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Controllers
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Controllers
 {
     public class UrlTaskRunnerController : UmbracoApiController
     {

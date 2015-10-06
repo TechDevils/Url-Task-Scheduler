@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using TechDevils.UrlTaskScheduler.Models;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service.Interfaces;
+
 
 namespace TechDevils.UrlTaskScheduler.Tests
 {

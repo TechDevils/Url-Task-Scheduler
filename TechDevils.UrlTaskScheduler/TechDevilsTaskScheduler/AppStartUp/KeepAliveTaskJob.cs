@@ -8,7 +8,7 @@ using log4net;
 using Quartz;
 using umbraco.BusinessLogic;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.AppSartUp
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.AppStartUp
 {
     public class KeepAliveTaskJob : IJob
     {

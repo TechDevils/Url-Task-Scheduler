@@ -5,7 +5,7 @@ using System.Web;
 using umbraco.businesslogic;
 using umbraco.interfaces;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler
 {
     //[Application("taskschedular2", "TaskSchedular","icon-people",13)]
     //public class Section : IApplication

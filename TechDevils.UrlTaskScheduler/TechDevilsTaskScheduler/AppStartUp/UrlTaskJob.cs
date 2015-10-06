@@ -9,12 +9,11 @@ using ClientDependency.Core;
 using log4net;
 using Quartz;
 using TechDevils.UrlTaskScheduler.Models;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service;
 using Umbraco.Core;
 using Umbraco.Core.Persistence;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.AppSartUp
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.AppStartUp
 {
     public class UrlTaskJob :IJob
     {

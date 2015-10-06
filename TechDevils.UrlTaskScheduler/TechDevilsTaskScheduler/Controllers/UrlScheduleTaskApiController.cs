@@ -5,12 +5,12 @@ using System.Reflection;
 using System.Web.Http;
 using log4net;
 using TechDevils.UrlTaskScheduler.Models;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service;
 using Umbraco.Core.Persistence;
 using Umbraco.Web.Editors;
 using Umbraco.Web.Mvc;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Controllers
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Controllers
 {
     //ToDo : Create dashborad features
 

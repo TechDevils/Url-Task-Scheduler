@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Security.AccessControl;
 using System.Threading;
 using System.Web;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Enums;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Enums;
 using Umbraco.Core.Persistence;
 using Umbraco.Core.Persistence.DatabaseAnnotations;
 using Umbraco.Web.PropertyEditors;

@@ -6,7 +6,7 @@ using Umbraco.Web.Models.Trees;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.Trees;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Controllers
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Controllers
 {
     [Tree("scheduleUrlsArea", "urlTasks", "Url Tasks")]
     [PluginController("TaskScheduler")]

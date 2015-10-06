@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TechDevils.UrlTaskScheduler.Models;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service.Interfaces;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
 {
     public class TimingService : ITimingService
     {

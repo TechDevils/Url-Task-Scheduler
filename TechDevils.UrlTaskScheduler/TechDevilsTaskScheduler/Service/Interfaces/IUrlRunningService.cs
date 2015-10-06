@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TechDevils.UrlTaskScheduler.Models;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service.Interfaces
 {
     public interface IUrlRunningService
     {

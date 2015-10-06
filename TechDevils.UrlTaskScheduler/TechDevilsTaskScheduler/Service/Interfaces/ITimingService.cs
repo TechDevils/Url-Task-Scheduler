@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TechDevils.UrlTaskScheduler.Models;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service.Interfaces
 {
     public interface ITimingService
     {

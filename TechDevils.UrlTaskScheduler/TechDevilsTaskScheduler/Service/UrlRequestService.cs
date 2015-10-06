@@ -7,9 +7,9 @@ using System.Security.Policy;
 using System.Web;
 using log4net;
 using TechDevils.UrlTaskScheduler.Models;
-using TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service.Interfaces;
+using TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service.Interfaces;
 
-namespace TechDevils.UrlTaskScheduler.TechDevilsTaskSchedular.Service
+namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
 {
     public class UrlRequestService : IUrlRequestService
     {
