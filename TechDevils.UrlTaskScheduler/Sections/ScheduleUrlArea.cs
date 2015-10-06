@@ -8,5 +8,5 @@ using umbraco.interfaces;
 namespace TechDevils.UrlTaskScheduler.Sections
 {
     [Application("scheduleUrlsArea", "Url Scheduler", "icon-time", 10)]
-    public class SchecduleUrlArea : IApplication {}
+    public class ScheduleUrlArea : IApplication {}
 }
