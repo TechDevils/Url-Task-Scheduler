@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco")
-    .controller("TechDevils.DashboradController", function ($scope, urlResource, navigationService, notificationsService) {
+    .controller("TechDevils.DashboardController", function ($scope, urlResource, navigationService, notificationsService) {
         $scope.changeStatus = function(value) {
             var item = $scope.urls[value];
 
