@@ -42,7 +42,7 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.AppStartUp
             //var trigger = TriggerBuilder.Create().WithCronSchedule("* 1 * * * ? *").Build();
             var trigger = TriggerBuilder.Create().WithIdentity("MinTask").StartNow().WithSimpleSchedule(x => x.WithIntervalInMinutes(1).RepeatForever()).Build();
 
-            if (!scheduler.CheckExists(trigger.Key) && !string.IsNullOrEmpty(url))
+            if (!scheduler.CheckExists(trigger.Key)) //&& !string.IsNullOrEmpty(url))
             {
                 scheduler.ScheduleJob(job, trigger);
                 _log.Info("Triggered Quartz Scheduler");
