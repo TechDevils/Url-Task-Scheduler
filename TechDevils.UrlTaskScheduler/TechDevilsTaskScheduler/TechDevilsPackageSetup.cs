@@ -19,6 +19,7 @@ using Umbraco.Web.WebServices;
 
 namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler
 {
+    ///App_Plugins/TaskScheduler/backoffice/Overview/dashboard.html
     //<Action runat="install" alias="TechDevilsPackageSetup" source="~/app_data/temp/TechDevils.UrlTaskScheduler/TechDevils.UrlTaskScheduler.dll" target="~/bin/TechDevils.UrlTaskScheduler.dll" minversion="7" />
     public class TechDevilsPackageSetup : IPackageAction
     {

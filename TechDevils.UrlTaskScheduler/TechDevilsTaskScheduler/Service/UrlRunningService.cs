@@ -20,6 +20,7 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
     {
 
         private IUrlRequestService _requestService;
+        private readonly Database _database;
 
         private readonly SaveUrlStatus _saveResult;
         private readonly EmailFinalResult _emailFinalResult;
@@ -27,7 +28,7 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
         private readonly UrlPostStatusTask _saveTasks;
 
         private readonly TimingService _timingService;
-        private UmbracoDatabase _database;
+        //private UmbracoDatabase _database;
         private ILog _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public delegate void SaveUrlStatus(int id, string url, int requestStatus, string resultMessage = null);
@@ -39,10 +40,14 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
 
         public UrlRunningService(IUrlRequestService requestService)//, EmailFinalResult emailFinalResult)
         {
-            _database = new UmbracoDatabase("umbracoDbDSN");
+            _database = ApplicationContext.Current.DatabaseContext.Database;
+            _database.OpenSharedConnection();
+            //_database = new UmbracoDatabase("umbracoDbDSN");
 
             _timingService = new TimingService();
             _requestService = requestService;
+
+
             Log = LogManager.GetLogger(typeof (UrlRunningService));
             //_emailFinalResult = emailFinalResult;
             //_completeStatus += SetCurrentStatus;
@@ -57,6 +62,14 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
         public string GetAndRunUrls(List<ScheduleUrl> urls)
         {
             var runTime = DateTime.UtcNow.Date + new TimeSpan(DateTime.UtcNow.Hour, DateTime.UtcNow.Minute + 1, 0);
+
+            //foreach (var scheduleUrl in urls)
+            //{
+            //    _log.Info("id : " + scheduleUrl.Id + " Next Run = " + scheduleUrl.NextRun);
+            //    _log.Info("scheduleUrl.NextRun < runTime = " + (scheduleUrl.NextRun < runTime));
+            //    _log.Info("!scheduleUrl.Disabled = " + (!scheduleUrl.Disabled));
+            //    _log.Info("scheduleUrl.UrlTaskStatus == UrlTaskStatus.inactive = " + (scheduleUrl.UrlTaskStatus == UrlTaskStatus.inactive));
+            //}
 
             urls = urls.Where(x => x.NextRun < runTime && !x.Disabled && x.UrlTaskStatus == UrlTaskStatus.inactive).ToList();
             try
@@ -95,6 +108,8 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
 
             _database.Update(url);
 
+            _database.CompleteTransaction();
+
             return _requestService.RequestUrl(url.Url, url.Id);
         }
 
@@ -120,6 +135,7 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
             //var result = _database.Fetch<ScheduleUrl>(query).FirstOrDefault();
 
             _database.Update(record);
+            _database.CompleteTransaction();
         }
 
         public void SetLastRunTime(ScheduleUrl record, Task<int> taskResult)
