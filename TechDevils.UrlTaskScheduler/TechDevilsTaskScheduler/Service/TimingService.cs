@@ -29,7 +29,7 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
                     int.TryParse(timeSplit[0], out hour);
                     int.TryParse(timeSplit[1], out min);
 
-                    if (hour <= nextDate.Hour && min < nextDate.Minute)
+                    if (hour <= nextDate.Hour && min <= nextDate.Minute)
                     {
                         nextDate = nextDate.AddDays(1);
                     }
@@ -64,10 +64,12 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
 
                     nextRun = nextDate.Date + time;
 
-                    if (!nextRun.IsDaylightSavingTime())
-                    {
-                        nextRun = nextRun.AddHours(-1);
-                    }
+                    //var dayLightSaving = nextRun.IsDaylightSavingTime();
+
+                    //if (!dayLightSaving)
+                    //{
+                    //    nextRun = nextRun.AddHours(-1);
+                    //}
 
                     break;
             }
