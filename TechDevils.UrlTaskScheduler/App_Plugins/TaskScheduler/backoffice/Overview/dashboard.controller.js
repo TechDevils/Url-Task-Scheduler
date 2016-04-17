@@ -4,16 +4,23 @@
             var item = $scope.urls[value];
 
             if (item.disabled) {
-                urlResource.enableUrl(value);
+                urlResource.enableUrl(value).then(function() {
+                    navigationService.syncTree({ tree: 'urlTasks', path: [-1, -1], forceReload: true });
+                    }
+                   );
                 notificationsService.info("Enable '" + item.desc + "' Url");
-            } else {
-                urlResource.disableUrl(value);
+            } else
+{
+                urlResource.disableUrl(value).then(function () {
+                    navigationService.syncTree({ tree: 'urlTasks', path: [-1, -1], forceReload: true });
+                }
+                               );
                 notificationsService.warning("Disable '" + item.desc + "' Url");
             }
 
             item.disabled = !item.disabled;
             item["disabledIcon"] = ((item["disabled"]) ? "red" : "blue");
-            navigationService.syncTree({ tree: 'urlTasks', path: [-1, -1], forceReload: true });
+            ;
         }
 
         $scope.runNowNow = function(value) {
