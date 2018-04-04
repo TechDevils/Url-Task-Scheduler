@@ -85,7 +85,7 @@
                 SetupUrlData($scope, response.data);
                 $scope.urlTask.$dirty = false;
                 navigationService.syncTree({ tree: 'urlTasks', path: [-1, -1], forceReload: true });
-                notificationsService.success("Success test has been saved");
+                notificationsService.success("Success! Task has been saved");
             });
         }
 
