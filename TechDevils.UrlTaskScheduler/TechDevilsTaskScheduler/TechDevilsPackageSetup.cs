@@ -62,8 +62,8 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler
         public bool Execute(string packageName, XmlNode xmlData)
         {
             _log.Info("Execute: " + packageName);
-            updateLangFiles("en.xml", "sections", "scheduleUrlsArea", "Schedeuled Urls");
-            updateLangFiles("en_us.xml", "sections", "scheduleUrlsArea", "Schedeuled Urls");
+            updateLangFiles("en.xml", "sections", "scheduleUrlsArea", "Scheduled Urls");
+            updateLangFiles("en_us.xml", "sections", "scheduleUrlsArea", "Scheduled Urls");
 
             //<task log="true" alias="TechDevilsScheduledTask" interval="60" url="/umbraco/api/UrlTaskRunner/UrlRunner"/>
             //setupScheduledTaskInUmbracoSettingsFile();
