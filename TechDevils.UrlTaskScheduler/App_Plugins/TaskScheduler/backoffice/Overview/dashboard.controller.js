@@ -1,69 +1,83 @@
-﻿angular.module("umbraco")
-    .controller("TechDevils.DashboardController", function ($scope, urlResource, navigationService, notificationsService) {
-        $scope.changeStatus = function(value) {
-            var item = $scope.urls[value];
+﻿angular.module("umbraco").controller("TechDevils.DashboardController", function ($scope, urlResource, navigationService, notificationsService, dialogService) {
+    $scope.changeStatus = function (value) {
+        var item = $scope.urls[value];
 
-            if (item.disabled) {
-                urlResource.enableUrl(value);
-                notificationsService.info("Enable '" + item.desc + "' Url");
-            } else {
-                urlResource.disableUrl(value);
-                notificationsService.warning("Disable '" + item.desc + "' Url");
-            }
-
-            item.disabled = !item.disabled;
-            item["disabledIcon"] = ((item["disabled"]) ? "red" : "blue");
-            navigationService.syncTree({ tree: 'urlTasks', path: [-1, -1], forceReload: true });
+        if (item.disabled) {
+            urlResource.enableUrl(value);
+            notificationsService.info("Enable '" + item.desc + "' Url");
+        } else {
+            urlResource.disableUrl(value);
+            notificationsService.warning("Disable '" + item.desc + "' Url");
         }
 
-        $scope.runNowNow = function(value) {
-            var item = $scope.urls[value];
+        item.disabled = !item.disabled;
+        item["disabledIcon"] = ((item["disabled"]) ? "red" : "blue");
+        navigationService.syncTree({ tree: 'urlTasks', path: [-1, -1], forceReload: true });
+    };
 
-            if (item.disabled) {
-                var confirmed = confirm(item.desc + " is disabled would you still like to run it");
+    $scope.runNowNow = function (value) {
+        var item = $scope.urls[value];
 
-                if (confirmed) {
-                    urlResource.runTaskNow(value);
-                } else {
-                    notificationsService.info("cancelled run now");
-                }
-            } else {
+        if (item.disabled) {
+            var confirmed = confirm(item.desc + " is disabled would you still like to run it");
+
+            if (confirmed) {
                 urlResource.runTaskNow(value);
-                notificationsService.info("Ran " + item.desc);
+            } else {
+                notificationsService.info("cancelled run now");
             }
+        } else {
+            urlResource.runTaskNow(value);
+            notificationsService.info("Ran " + item.desc);
         }
+    };
 
-        $scope.urls = {};
+    $scope.urls = {};
              
-        urlResource.checkStatus(1, 200).then(function(response) {
-            for (var i = 0; i < response["data"].length; i++) {
-                var item = response["data"][i];
+    urlResource.checkStatus(1, 200).then(function(response) {
+        for (var i = 0; i < response["data"].length; i++) {
+            var item = response["data"][i];
 
-                var feq = "";
-                if (item["runningType"] == "dayAndTime") {
-                    var days = item["daysToRunOutput"].split(";");
-                    var runDays = "";
-                    for (var j = 0; j < days.length; j++) {
-                        var day = days[j].split(":");
-                        if (day[1] == "1") {
-                            if (runDays.length == 0) {
-                                runDays = day[0];
-                            } else {
-                                runDays = runDays + "," + day[0];
-                            }
+            var feq = "";
+            if (item["runningType"] == "dayAndTime") {
+                var days = item["daysToRunOutput"].split(";");
+                var runDays = "";
+                for (var j = 0; j < days.length; j++) {
+                    var day = days[j].split(":");
+                    if (day[1] == "1") {
+                        if (runDays.length == 0) {
+                            runDays = day[0];
+                        } else {
+                            runDays = runDays + "," + day[0];
                         }
                     }
-                    feq = runDays + " @ " + item["timeToRun"];
-
-                } else if (item["runningType"] == "interval") {
-                    feq = item["minuteInterval"] + "min";
                 }
+                feq = runDays + " @ " + item["timeToRun"];
 
-                item["feq"] = feq;
-                item["disabledIcon"] = ((item["disabled"]) ? "red" : "blue");
-
-                $scope.urls[item.id] = item;
+            } else if (item["runningType"] == "interval") {
+                feq = item["minuteInterval"] + "min";
             }
-        });
 
+            item["feq"] = feq;
+            item["disabledIcon"] = ((item["disabled"]) ? "red" : "blue");
+
+            $scope.urls[item.id] = item;
+        }
+});
+
+    // Open detail modal
+    $scope.showDetails = function (urlItem) {
+        var dialog = dialogService.open({
+            template: '/App_Plugins/TaskScheduler/backoffice/Overview/dashboard-modal-details.html',
+            dialogData: { 
+                urlItem: urlItem
+            },
+            show: true,
+            width: 800
+        });
+    };
+});
+
+angular.module("umbraco").controller("TechDevils.DashboardModalController", function ($scope, urlResource, navigationService, notificationsService) {
+    
 });
