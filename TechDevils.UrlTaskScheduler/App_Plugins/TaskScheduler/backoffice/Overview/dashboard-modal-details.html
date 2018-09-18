@@ -1,0 +1,48 @@
+﻿<umb-panel ng-controller="TechDevils.DashboardModalController">
+    <div class="umb-panel-header" id="ts-header">
+        <h3 class="title"><localize key="TaskScheduler_DashboardModal.Title">Task details</localize> (<span>Id: {{ dialogData.urlItem.id }}</span>)</h3>
+    </div>
+    <div class="umb-panel-body with-header with-footer" id="ts-content">
+        <table id="TSDetailsTable" class="table">
+            <tbody style="font-size: 12px;">
+                <tr>
+                    <th style="padding: 15px; border-top: 0; width: 120px;"><localize key="TaskScheduler_Dashboard.Status">Status</localize></th>
+                    <td style="padding: 15px; border-top: 0;">{{dialogData.urlItem.currentTaskStatus}}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 15px; border-top: 0; width: 120px;"><localize key="TaskScheduler_Dashboard.URL">URL</localize></th>
+                    <td style="padding: 15px; border-top: 0;">{{ dialogData.urlItem.isHttps ? 'https://' + dialogData.urlItem.url : 'http://' + dialogData.urlItem.url }}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 15px; border-top: 0; width: 120px;"><localize key="TaskScheduler_Dashboard.Freq">Frequency</localize></th>
+                    <td style="padding: 15px; border-top: 0;">{{ dialogData.urlItem.feq }}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 15px; border-top: 0; width: 120px;"><localize key="TaskScheduler_Dashboard.LastRun">Last Run</localize></th>
+                    <td style="padding: 15px; border-top: 0;">{{ dialogData.urlItem.lastRun == '0001-01-01T00:00:00' ? '' : dialogData.urlItem.lastRun | date: 'dd MMM yyyy' }}<br />{{ dialogData.urlItem.lastRun == '0001-01-01T00:00:00' ? '' : dialogData.urlItem.lastRun | date: 'h:mm a' }}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 15px; border-top: 0; width: 120px;"><localize key="TaskScheduler_Dashboard.NextRun">Next Run</localize></th>
+                    <td style="padding: 15px; border-top: 0;">{{ dialogData.urlItem.nextRun | date: 'dd MMM yyyy' }}<br />{{ dialogData.urlItem.nextRun | date: 'h:mm a' }}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 15px; border-top: 0; width: 120px;"><localize key="TaskScheduler_Dashboard.LastManualRun">Last Manual Run</localize></th>
+                    <td style="padding: 15px; border-top: 0;">{{ dialogData.urlItem.lastManualRun | date: 'dd MMM yyyy' }}<br />{{ dialogData.urlItem.lastManualRun | date: 'h:mm a' }}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 15px; border-top: 0; width: 120px;"><localize key="TaskScheduler_Dashboard.LastFiveOutcomes">Last Five Outcomes</localize></th>
+                    <td style="padding: 15px; border-top: 0;">{{ dialogData.urlItem.lastFiveOutcomes }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="padding: 15px; word-wrap: break-word;">
+            <p><strong><localize key="TaskScheduler_Dashboard.Desc">Description</localize></strong></p>
+            <p>{{ dialogData.urlItem.desc }}</p>
+        </div>
+    </div>
+    <div class="umb-panel-footer" id="ts-footer">
+        <a href="" ng-click="close()" class="btn pull-right">
+            <localize key="general_close">Close</localize>
+        </a>
+    </div>
+</umb-panel>

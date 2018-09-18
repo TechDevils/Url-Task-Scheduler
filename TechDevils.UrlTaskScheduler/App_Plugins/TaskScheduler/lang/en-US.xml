@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
+  <creator>
+    <name>Andrew Ellis-chadwick</name>
+    <link>https://our.umbraco.com/packages/backoffice-extensions/url-task-scheduler-for-v7/</link>
+  </creator>
+  <area alias="TaskScheduler">
+    <!-- DASHBOARD -->
+    <key alias="Dashboard.Title"><![CDATA[URLs timing overview]]></key>
+    <key alias="DashboardModal.Title"><![CDATA[Task details]]></key>
+    <key alias="Dashboard.Id"><![CDATA[Id]]></key>
+    <key alias="Dashboard.URL"><![CDATA[URL]]></key>
+    <key alias="Dashboard.HTTPS"><![CDATA[HTTPS]]></key>
+    <key alias="Dashboard.Desc"><![CDATA[Description]]></key>
+    <key alias="Dashboard.Freq"><![CDATA[Frequency]]></key>
+    <key alias="Dashboard.LastRun"><![CDATA[Last Run]]></key>
+    <key alias="Dashboard.NextRun"><![CDATA[Next Run]]></key>
+    <key alias="Dashboard.Status"><![CDATA[Status]]></key>
+    <key alias="Dashboard.Disabled"><![CDATA[Disabled]]></key>
+    <key alias="Dashboard.LastFiveOutcomes"><![CDATA[Last Five Outcomes]]></key>
+    <key alias="Dashboard.Actions"><![CDATA[Actions]]></key>
+    <key alias="Dashboard.RunNow"><![CDATA[Run Now]]></key>
+    <key alias="Dashboard.LastManualRun"><![CDATA[Last Manual Run]]></key>
+    <key alias="Dashboard.Details"><![CDATA[Details]]></key>
+  </area>
+</language>
