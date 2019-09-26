@@ -21,14 +21,14 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
             log = LogManager.GetLogger(typeof (UrlRequestService));
         }
 
-        public int RequestUrl(string url, int id, bool returnResult = false)
+        public int RequestUrl(bool isHttps, string url, int id, bool returnResult = false)
         {
             var status = 0;
 
             try
             {
                 //ToDo : Sort http out so that it picks the right url check for relative paths
-                var webRequest = (HttpWebRequest) WebRequest.Create("http://"+url);
+                var webRequest = (HttpWebRequest) WebRequest.Create((isHttps ? "https://" : "http://") + url);
 
                 var httpWebResponse = webRequest.GetResponse();
 
