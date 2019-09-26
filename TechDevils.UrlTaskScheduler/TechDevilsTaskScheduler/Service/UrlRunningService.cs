@@ -110,7 +110,7 @@ namespace TechDevils.UrlTaskScheduler.TechDevilsTaskScheduler.Service
 
             _database.CompleteTransaction();
 
-            return _requestService.RequestUrl(url.Url, url.Id);
+            return _requestService.RequestUrl(url.IsHttps, url.Url, url.Id);
         }
 
         private void SetRunningStatus(ScheduleUrl record)
